@@ -41,3 +41,7 @@ This project is used to assist in evaluating end-to-end (E2E) test tools such as
    - For Android: Press `a` in the terminal or click "Run on Android device/emulator" in Expo Dev Tools.
    - For iOS: Press `i` in the terminal or click "Run on iOS simulator" (macOS only).
    - For Web: Press `w` in the terminal or click "Run in web browser".
+
+   #### Pre-conditions for Emulators
+   - To use the Android emulator, install [Android Studio](https://developer.android.com/studio) and set up an Android Virtual Device (AVD).
+   - To use the iOS simulator, install [Xcode](https://developer.apple.com/xcode/) (macOS only).
