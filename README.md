@@ -1,0 +1,1 @@
+# react-native-app-e2e
