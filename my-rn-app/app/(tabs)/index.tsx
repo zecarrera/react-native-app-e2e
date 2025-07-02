@@ -28,7 +28,7 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Login</Text>
       {success ? (
         <>
-          <Text style={styles.success}>Login successful!</Text>
+          <Text style={styles.success} testID="successMessage" accessibilityLabel="successMessage">Login successful!</Text>
           <Button
             title="Logout"
             onPress={() => {
@@ -42,6 +42,8 @@ export default function TabOneScreen() {
       ) : (
         <>
           <TextInput
+            testID="emailInput"
+            accessibilityLabel="emailInput"
             style={styles.input}
             placeholder="Email"
             value={email}
@@ -50,6 +52,8 @@ export default function TabOneScreen() {
             keyboardType="email-address"
           />
           <TextInput
+            testID="passwordInput"
+            accessibilityLabel="passwordInput"
             style={styles.input}
             placeholder="Password"
             value={password}
@@ -57,7 +61,7 @@ export default function TabOneScreen() {
             secureTextEntry
           />
           {error ? <Text style={styles.error}>{error}</Text> : null}
-          <Button title="Login" onPress={handleLogin} />
+          <Button title="Login" onPress={handleLogin} testID="loginButton" accessibilityLabel="loginButton" />
         </>
       )}
     </View>
