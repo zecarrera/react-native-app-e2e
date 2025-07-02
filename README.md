@@ -40,6 +40,7 @@ This project is used to assist in evaluating end-to-end (E2E) test tools such as
 3. **Run on your device or emulator**
    - For Android: Press `a` in the terminal or click "Run on Android device/emulator" in Expo Dev Tools.
    - For iOS: Press `i` in the terminal or click "Run on iOS simulator" (macOS only).
+     - If the above does not work run: `npx expo run:ios`
    - For Web: Press `w` in the terminal or click "Run in web browser".
 
    #### Pre-conditions for Emulators
