@@ -1,0 +1,15 @@
+appId: com.yourcompany.myrnapp
+---
+- launchApp
+- inputText:
+    id: emailInput
+    text: test@example.com
+- tapOn:
+    id: passwordInput
+- inputText:
+    id: passwordInput
+    text: "12345"
+- tapOn:
+    id: loginButton
+- assertVisible:
+    id: successMessage
