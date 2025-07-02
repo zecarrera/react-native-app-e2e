@@ -1,6 +1,8 @@
 appId: com.yourcompany.myrnapp
 ---
 - launchApp
+- tapOn:
+    id: emailInput
 - inputText:
     id: emailInput
     text: test@example.com
