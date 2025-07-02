@@ -8,34 +8,6 @@ This folder contains end-to-end (E2E) tests for the React Native app, using [App
 - **WebdriverIO**: Used as the test runner and assertion library.
 - **Appium WebdriverIO Service**: Integrates Appium with WebdriverIO for streamlined test execution.
 
-## Folder Structure
-
-```
-e2e/
-├── specs/         # Test specifications
-├── helpers/       # Utility functions and custom commands
-├── config/        # Appium and WebdriverIO configuration files
-└── README.md      # This documentation
-```
-
-## Building the App
-
-Before running tests, you need to build the app and generate the APK.
-
-### Android
-
-```sh
-npx expo prebuild
-cd android
-./gradlew assembleRelease
-```
-
-This will generate the **release APK** required for testing at:
-
-```
-android/app/build/outputs/apk/release/app-release.apk
-```
-
 ## Running the Tests on Android
 
 After building the debug APK, you can run the E2E tests with the following steps, each in a separate terminal:

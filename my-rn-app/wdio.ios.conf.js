@@ -1,6 +1,6 @@
 exports.config = {
   runner: 'local',
-  specs: ['./e2e/**/*.spec.js'],
+  specs: ['./e2e/appium/**/*.spec.js'],
   maxInstances: 1,
   capabilities: [
     {
