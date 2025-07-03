@@ -14,7 +14,7 @@ After building the debug APK, you can run the E2E tests with the following steps
 
 1. **Build the debug APK:**
    ```sh
-   yarn e2e:build-android
+   yarn e2e:build:android
    ```
 2. **Start Metro (JS server):**
    ```sh
@@ -22,7 +22,7 @@ After building the debug APK, you can run the E2E tests with the following steps
    ```
 3. **Start the Android emulator (if not already running):**
    ```sh
-   yarn e2e:emulator-android
+   yarn e2e:emulator:android
    ```
 4. **Run your e2e tests:**
    ```sh
@@ -37,7 +37,7 @@ After building the iOS app for the simulator, you can run the E2E tests with the
 
 1. **Build the iOS app for simulator:**
    ```sh
-   yarn e2e:build-ios
+   yarn e2e:build:ios
    ```
 2. **Start Metro (JS server):**
    ```sh
@@ -45,7 +45,7 @@ After building the iOS app for the simulator, you can run the E2E tests with the
    ```
 3. **Start the iOS simulator (if not already running):**
    ```sh
-   yarn e2e:simulator-ios
+   yarn e2e:simulator:ios
    ```
 4. **Run your e2e tests:**
    ```sh

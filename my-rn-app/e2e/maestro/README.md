@@ -22,7 +22,7 @@ Follow these steps to run your Maestro tests locally on Android:
 
 1. **Build the debug APK:**
    ```sh
-   yarn e2e:build-android
+   yarn e2e:build:android
    ```
 2. **Start Metro (JS server):**
    ```sh
@@ -30,7 +30,7 @@ Follow these steps to run your Maestro tests locally on Android:
    ```
 3. **Start the Android emulator (if not already running):**
    ```sh
-   yarn e2e:emulator-android
+   yarn e2e:emulator:android
    ```
 4. **Install the APK to the emulator:**
    ```sh
@@ -47,7 +47,7 @@ Follow these steps to run your Maestro tests locally on iOS:
 
 1. **Build the iOS app for simulator:**
    ```sh
-   yarn e2e:build-ios
+   yarn e2e:build:ios
    ```
 2. **Start Metro (JS server):**
    ```sh
@@ -55,7 +55,7 @@ Follow these steps to run your Maestro tests locally on iOS:
    ```
 3. **Start the iOS simulator (if not already running):**
    ```sh
-   yarn e2e:simulator-ios
+   yarn e2e:simulator:ios
    ```
 4. **Install the app to the simulator:**
    ```sh
