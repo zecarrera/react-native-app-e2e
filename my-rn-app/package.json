@@ -17,7 +17,8 @@
     "e2e:emulator:android": "emulator -avd Pixel_9a -no-snapshot-load & adb wait-for-device",
     "e2e:simulator:ios": "xcrun simctl boot 'iPhone 16 Pro' || true",
     "detox:build:android": "npx expo prebuild && detox build --configuration android.emu.debug",
-    "detox:test:android": "detox test --configuration android.emu.debug"
+    "detox:test:android": "detox test --configuration android.emu.debug",
+    "detox:test:ios": "detox test --configuration ios.sim.debug"
   },
   "jest": {
     "preset": "jest-expo"
