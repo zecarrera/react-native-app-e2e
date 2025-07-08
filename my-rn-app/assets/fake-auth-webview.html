@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake Auth WebView</title>
+  <style>
+    body { font-family: sans-serif; background: #f7f7f7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+    .container { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); width: 320px; text-align: center; }
+    .title { font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; }
+    .input { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1.2rem; font-size: 1rem; }
+    .button-row { display: flex; gap: 1rem; justify-content: center; }
+    .btn { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .btn-save { background: #2ecc40; color: #fff; }
+    .btn-cancel { background: #888; color: #fff; }
+    .success { color: #2ecc40; margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Fake Auth WebView</div>
+    <input id="email" class="input" type="email" placeholder="Email" />
+    <div class="button-row">
+      <button class="btn btn-save" onclick="handleSave()">Save</button>
+      <button class="btn btn-cancel" onclick="handleCancel()">Cancel</button>
+    </div>
+    <div id="successMsg" class="success" style="display:none;">Saved successfully</div>
+  </div>
+  <script>
+    function handleSave() {
+      document.getElementById('successMsg').style.display = 'block';
+      const email = document.getElementById('email').value;
+      setTimeout(() => {
+        if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+          window.ReactNativeWebView.postMessage(JSON.stringify({ status: 'success', email }));
+        }
+        window.close();
+      }, 1200);
+    }
+    function handleCancel() {
+      if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+        window.ReactNativeWebView.postMessage(JSON.stringify({ status: 'cancel' }));
+      }
+      window.close();
+    }
+  </script>
+</body>
+</html>

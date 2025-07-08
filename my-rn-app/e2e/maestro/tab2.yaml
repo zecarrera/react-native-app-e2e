@@ -1,0 +1,15 @@
+# Maestro Flow: Tab Two Test
+
+appId: com.yourcompany.myrnapp
+---
+- launchApp
+- tapOn: "Tab Two"
+- assertVisible: "This page contains example components for testing."
+- tapOn: "Modal"
+- inputText: "test@example.com"
+- tapOn: "Save"
+- assertVisible: "Saved successfully"
+- tapOn: "expoExternalWebBrowserCall"
+- tapOn: "Fake Auth WebView"
+- assertVisible: "Close"
+- tapOn: "Close"
