@@ -18,7 +18,9 @@
     "e2e:simulator:ios": "xcrun simctl boot 'iPhone 16 Pro' || true",
     "detox:build:android": "npx expo prebuild && detox build --configuration android.emu.debug",
     "detox:test:android": "detox test --configuration android.emu.debug",
-    "detox:test:ios": "detox test --configuration ios.sim.debug"
+    "detox:test:ios": "detox test --configuration ios.sim.debug",
+    "e2e:allure:report": "allure generate allure-results --clean -o allure-report",
+    "e2e:allure:open": "allure open allure-report"
   },
   "jest": {
     "preset": "jest-expo"

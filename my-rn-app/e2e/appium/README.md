@@ -29,7 +29,6 @@ After building the debug APK, you can run the E2E tests with the following steps
    yarn e2e:test:android
    ```
 
----
 
 ## Running the Tests on iOS
 
@@ -52,7 +51,9 @@ After building the iOS app for the simulator, you can run the E2E tests with the
    yarn e2e:test:ios
    ```
 
-> **Environment Setup:**
+
+## **Environment Setup:**
+
 > - Make sure the `ANDROID_SDK_ROOT` environment variable is set to your Android SDK location. For example:
 >   ```sh
 >   export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
@@ -65,3 +66,23 @@ After building the iOS app for the simulator, you can run the E2E tests with the
 >   xcrun simctl list devices
 >   ```
 > - For Expo managed workflow, always use the debug build and keep Metro running during tests.
+
+
+## Generating the Allure HTML Report
+
+After running your E2E tests, you can generate and view a detailed HTML report using Allure:
+
+1. **Generate the Allure report:**
+   ```sh
+   yarn e2e:allure:report
+   ```
+   This will process the latest test results and create the HTML report in the `allure-report/` directory.
+
+2. **Open the Allure report in your browser:**
+   ```sh
+   yarn e2e:allure:open
+   ```
+   This will launch a local server and open the report in your default browser.
+
+> **Note:**
+> - You must generate a new report after each test run to see the latest results.

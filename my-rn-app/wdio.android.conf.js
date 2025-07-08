@@ -14,7 +14,7 @@ exports.config = {
   ],
   logLevel: 'info',
   framework: 'mocha',
-  reporters: ['spec'],
+  reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
   services: ['appium'],
   mochaOpts: {
     timeout: 60000

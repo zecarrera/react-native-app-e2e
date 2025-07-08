@@ -44,3 +44,7 @@ ios/
 *.aab
 android/app/build/
 ios/build/
+
+# Allure
+allure-report/
+allure-results/
