@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Modal, View as RNView, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, Modal, View as RNView, TextInput, Button, Alert, Platform, TouchableOpacity } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import { WebView } from 'react-native-webview';
 
@@ -32,11 +32,26 @@ export default function TabTwoScreen() {
       <Text style={styles.infoParagraph}>
         This page contains example components for testing.
       </Text>
-      <Button title="Modal" onPress={() => setModalVisible(true)} />
+      <Button
+        title="Modal"
+        onPress={() => setModalVisible(true)}
+        accessibilityLabel="Modal"
+        testID="Modal"
+      />
       <View style={{ height: 12 }} />
-      <Button title="expoExternalWebBrowserCall" onPress={handleExpoWebBrowser} />
+      <Button
+        title="expoExternalWebBrowserCall"
+        onPress={handleExpoWebBrowser}
+        accessibilityLabel="expoExternalWebBrowserCall"
+        testID="expoExternalWebBrowserCall"
+      />
       <View style={{ height: 12 }} />
-      <Button title="Fake Auth WebView" onPress={() => setWebViewVisible(true)} />
+      <Button
+        title="Fake Auth WebView"
+        onPress={() => setWebViewVisible(true)}
+        accessibilityLabel="Fake Auth WebView"
+        testID="Fake Auth WebView"
+      />
       <Modal
         visible={modalVisible}
         animationType="slide"
@@ -55,9 +70,9 @@ export default function TabTwoScreen() {
               autoCapitalize="none"
             />
             <RNView style={styles.buttonRow}>
-              <Button title="Save" onPress={handleSave} />
+              <Button title="Save" onPress={handleSave} accessibilityLabel="Save" testID="Save" />
               <View style={styles.buttonSpacer} />
-              <Button title="Cancel" onPress={handleCancel} color="#888" />
+              <Button title="Cancel" onPress={handleCancel} color="#888" accessibilityLabel="Cancel" testID="Cancel" />
             </RNView>
           </RNView>
         </RNView>
@@ -72,13 +87,24 @@ export default function TabTwoScreen() {
       >
         <RNView style={styles.webViewContainer}>
           <WebView
-            source={{ uri: 'http://localhost:3000/fake-auth-webview.html' }}
+            source={{
+              uri: Platform.OS === 'android'
+                ? 'http://10.0.2.2:3000/fake-auth-webview.html'
+                : 'http://localhost:3000/fake-auth-webview.html',
+            }}
             style={{ width: 320, height: 400, borderRadius: 12, overflow: 'hidden' }}
             originWhitelist={["*"]}
             javaScriptEnabled
             domStorageEnabled
           />
-          <Button title="Close" onPress={() => setWebViewVisible(false)} />
+          <TouchableOpacity
+            onPress={() => setWebViewVisible(false)}
+            accessibilityLabel="Close"
+            testID="Close"
+            style={{ marginTop: 16, padding: 12, backgroundColor: '#eee', borderRadius: 8 }}
+          >
+            <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#333' }}>Close</Text>
+          </TouchableOpacity>
         </RNView>
       </Modal>
     </View>
